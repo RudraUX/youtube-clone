@@ -19,9 +19,15 @@ function VideoCard({
 }: {
   video: any;
 }) {
-  console.log(snippet);
+  // console.log(snippet);
   return (
-    <Card>
+    <Card
+      sx={{
+        width: { md: '320px', xs: '100%' },
+        boxShadow: 'none',
+        borderRadius: '0',
+      }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
@@ -44,7 +50,9 @@ function VideoCard({
           >
             <Typography variant='subtitle1' fontWeight='bold' color='gray'>
               {snippet?.channelTitle || demoChannelTitle}
-              <CheckCircle sx={{ color: '#fff', fontSize: 'small' }} />
+              <CheckCircle
+                sx={{ color: 'gray', fontSize: '12px', ml: '5px' }}
+              />
             </Typography>
           </Link>
         </CardContent>
