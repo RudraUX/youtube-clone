@@ -36,6 +36,11 @@ function ChannelCard({ channelDetail }: { channelDetail: any }) {
             {channelDetail?.snippet?.title}
             <CheckCircle sx={{ color: 'gray', fontSize: '14px', ml: '5px' }} />
           </Typography>
+          <Typography>
+            {parseInt(
+              channelDetail?.statistics?.subscriberCount
+            ).toLocaleString()}
+          </Typography>
         </CardContent>
       </Link>
     </Box>
