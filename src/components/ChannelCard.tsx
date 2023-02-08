@@ -6,7 +6,18 @@ import { demoProfilePicture } from '../utils/constants';
 
 function ChannelCard({ channelDetail }: { channelDetail: any }) {
   return (
-    <Box sx={{ boxShadow: 'none', borderRadius: '20px' }}>
+    <Box
+      sx={{
+        boxShadow: 'none',
+        borderRadius: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: { xs: '356px', md: '320px' },
+        height: '326px',
+        margin: 'auto',
+      }}
+    >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
