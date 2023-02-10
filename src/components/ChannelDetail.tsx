@@ -31,11 +31,15 @@ function ChannelDetail() {
           style={{
             background:
               'linear-gradient(90deg, rgba(0,185,203,1) 0%, rgba(217,0,219,1) 100%, rgba(94,175,0,1) 100%, rgba(195,0,0,1) 100%)',
-            zIndex: 1,
+            zIndex: 10,
             height: '300px',
           }}
         />
-        <ChannelCard channelDetail={channelDetail} />
+        <ChannelCard channelDetail={channelDetail} marginTop='-110px' />
+      </Box>
+      <Box display='flex' p='2'>
+        <Box sx={{ mr: { sm: '100px' } }} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   );
