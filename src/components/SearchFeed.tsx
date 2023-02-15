@@ -14,8 +14,23 @@ function SearchFeed() {
     });
   }, [searchTerm]);
 
+  if (!videos)
+    return (
+      <h1
+        style={{
+          color: '#FC1503',
+          height: '100vh',
+          textAlign: 'center',
+          marginTop: '10rem',
+        }}
+      >
+        Sorry {searchTerm} Not Found😓
+      </h1>
+    );
+
   return (
     <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
+      {}
       <Typography variant='h4' fontWeight='bold' mb={2} sx={{ color: 'white' }}>
         Search Result For:{}{' '}
         <span style={{ color: '#FC1503' }}>{searchTerm}</span> videos
