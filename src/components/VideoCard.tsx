@@ -23,7 +23,7 @@ function VideoCard({
   return (
     <Card
       sx={{
-        width: { md: '320px', xs: '100%' },
+        width: { xs: '100%', sm: '358px', md: '320px' },
         boxShadow: 'none',
         borderRadius: '0',
       }}
@@ -33,7 +33,7 @@ function VideoCard({
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           component='img'
           alt={snippet?.title}
-          sx={{ height: 180, width: 358 }}
+          sx={{ height: 180, width: { XS: '100%', sm: '358px', md: '320px' } }}
         />
         <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px' }}>
           <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>

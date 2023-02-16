@@ -3,6 +3,7 @@ import { VideoCard, ChannelCard } from './';
 
 type VideosProps = {
   videos: any[];
+  direction: string;
 };
 
 function Videos({ videos }: VideosProps) {
@@ -14,10 +15,12 @@ function Videos({ videos }: VideosProps) {
       alignItems='start'
       gap={2}
     >
-      {videos.map((item, idx) => (
+      {videos?.map((item, idx) => (
         <Box key={idx}>
           {item.id.videoId && <VideoCard video={item} />}
-          {item.id.channelId && <ChannelCard channelDetail={item} />}
+          {item.id.channelId && (
+            <ChannelCard channelDetail={item} marginTop={''} />
+          )}
         </Box>
       ))}
     </Stack>

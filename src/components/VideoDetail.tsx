@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { Box, Typography, Stack } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 
-import { Video, Videos } from './';
+import { Videos } from './';
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 function VideoDetail() {
@@ -17,7 +17,7 @@ function VideoDetail() {
       setVideoDetail(data.items[0]);
     });
 
-    fetchFromAPI(`videos?part=snippet&relatedToVideoId=${id}&type=video`).then(
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
       (data) => {
         setVideos(data.items);
       }
@@ -65,7 +65,7 @@ function VideoDetail() {
                   />
                 </Typography>
               </Link>
-              <Stack direction='row' gap='2opx' alignItems='center'>
+              <Stack direction='row' gap='20px' alignItems='center'>
                 <Typography variant='body1' color='#fff'>
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
@@ -83,7 +83,7 @@ function VideoDetail() {
         justifyContent='center'
         alignItems='center'
       >
-        <Videos videos={videos} />
+        <Videos videos={videos} direction='' />
       </Box>
     </Box>
   );
